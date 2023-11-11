@@ -1,0 +1,57 @@
+ButtonGroup COMPONENT
+wrapper to buttons 
+can take in variants of all buttons inside it.
+
+-variant
+-orientation
+-size
+-color
+
+<Stack direction="row"> 
+            <ButtonGroup 
+            variant='contained' 
+            orientation='vertical' 
+            size='small' 
+            color="secondary" 
+            aria-aria-label='aligment button group'>
+                <Button onClick={()=> alert('Left Clicked')}>LEFT</Button>
+                <Button onClick={()=> alert('Center Clicked')}>CENTER</Button>
+                <Button onClick={()=> alert('Right Clicked')}>RIGHT</Button>
+            </ButtonGroup>
+ </Stack>
+
+
+ToogleGroup x ToogleButton
+	-exclusive
+
+
+    const [formats, setFormats] =useState<string | null>(null)
+
+    console.log(formats)
+
+    const handleFormatChange = (event: React.MouseEvent<HTMLElement>, updatedFormats: string | null) => {
+        setFormats(updatedFormats)
+    }
+
+return
+
+ <Stack direction="row">
+            <ToggleButtonGroup 
+            aria-label='text formatting' 
+            value={formats} 
+            onChange={handleFormatChange} 
+            color='success' 
+            size='small' 
+            orientation='vertical' 
+            exclusive>
+                <ToggleButton value='bold' aria-label='bold'><FormatBoldIcon/></ToggleButton>
+                <ToggleButton value='italic' aria-label='italic'><FormatItalicIcon/></ToggleButton>
+                <ToggleButton value='underlined' aria-label='underlined'><FormatUnderlinedIcon/></ToggleButton>
+            </ToggleButtonGroup>
+        </Stack>
+
+
+
+
+
+

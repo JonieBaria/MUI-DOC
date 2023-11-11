@@ -1,0 +1,85 @@
+SELECT COMPONENT
+
+COLLECTING INFORMATION FROM LIST OF OPTIONS
+LEARN THE BASICS AND THEN FOCUS ON IMPROVING TRE USER EXPERIENCE
+
+IMPROVE ON: 
+
+	CHANGING THE COMMA SEPARATED VALUES FOR THE MULTISELECT COULD BE CHECKBOX
+
+	USING API FOR THE MENU USING MAP ARRAY FUNCTION ITERATING ON MENU COMPONENT(LIST RENDERING)
+
+
+
+Single select dropdown:
+
+import {Box, TextField, MenuItem} from '@mui/material'
+import { useState} from 'react'
+
+export const MuiSelect = () => {
+    const [country, setCountry] = useState('')
+    console.log({country})
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCountry(event.target.value as string)
+    }
+
+  return (
+    <Box width='250px'>
+        <TextField 
+            label = 'Select Country'
+            select
+            value={country}
+            onChange={handleChange}
+            fullWidth
+            size='small'
+        >
+            <MenuItem value='USA'>USA</MenuItem>
+            <MenuItem value='Philippines'>Philippines</MenuItem>
+            <MenuItem value='Australia'>Australia</MenuItem>
+        </TextField>
+    </Box>
+  )
+}
+
+
+MultiSElECT dropdown:
+	-SelectProps ={{}}
+
+import {Box, TextField, MenuItem} from '@mui/material'
+import { useState} from 'react'
+
+export const MuiSelect = () => {
+    const [countries, setCountries] = useState<string[]>([])
+    console.log({countries})
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value
+        setCountries(typeof value === 'string'? value.split(','): value)
+    }
+
+  return (
+    <Box width='250px'>
+        <TextField 
+            label = 'Select Country'
+            select
+            value={countries}
+            onChange={handleChange}
+            fullWidth
+            size='small'
+            SelectProps={{
+                multiple: true
+            }}
+        >
+            <MenuItem value='US'>USA</MenuItem>
+            <MenuItem value='PH'>Philippines</MenuItem>
+            <MenuItem value='AU'>Australia</MenuItem>
+        </TextField>
+    </Box>
+  )
+}
+
+
+
+
+

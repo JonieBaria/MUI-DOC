@@ -1,0 +1,14 @@
+TOGGLE BUTTON COMPONENT
+
+use to group related options
+
+we also have access with selected state of the button group
+
+set value={useState}
+
+togglebutton and tooglebuttongroup components
+creates an array of data and uses usestate.
+
+
+
+

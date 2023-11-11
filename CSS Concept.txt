@@ -1,0 +1,5 @@
+CSS Concept
+
+how does app.tsx, routes affect the layout/element spacing. What is the designated space of components in the app component
+
+Switch in router will only be changed and placed within the app.css arrangement in the app.tsx

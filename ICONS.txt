@@ -1,0 +1,12 @@
+ICONS COMPONENT
+
+import {IconButton} from '@mui/material'
+
+npm install @mui/icons-material
+
+Check icons in link: https://mui.com/material-ui/material-icons/
+
+icon buttons is for navigation
+regular buttons might look too pronounced
+
+
